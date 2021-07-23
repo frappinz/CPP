@@ -2,13 +2,15 @@
 # define CONTACT_H
 
 # include <iostream>
+# include <stdlib.h>
 
 class	Contact
 {
 	public:
 
-		void	setQualcosa(string);
-		string	getQualcosa();
+		void	setQualcosa(Contact contact, int i);
+		std::string	getQualcosa(Contact contact, int i);
+		int		todo;
 
 	private:
 		std::string name;
@@ -16,9 +18,8 @@ class	Contact
 		std::string phoneNumber;
 		std::string darkestSecret;
 		std::string nickname;
+		int 		index;
 	
-}
-
-
+};
 
 #endif
