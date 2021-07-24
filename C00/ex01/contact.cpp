@@ -7,18 +7,18 @@ void	Contact::setQualcosa(Contact contact, int i)
 	std::cout<< i << ")\nInsert Name: ";
 	std::cin >> name;
 	system("clear");
-	// std::cout<< "Insert Last Name: ";
-	// std::cin >> lastName;
-	// system("clear");
-	// std::cout<< "Insert Phone Number: ";
-	// std::cin >> phoneNumber;
-	// system("clear");
-	// std::cout<< "Insert Nickname: ";
-	// std::cin >> nickname;
-	// system("clear");
-	// std::cout<< "Insert Darkest Secret: ";
-	// std::cin >> darkestSecret;
-	// system("clear");
+	std::cout<< "Insert Last Name: ";
+	std::cin >> lastName;
+	system("clear");
+	std::cout<< "Insert Phone Number: ";
+	std::cin >> phoneNumber;
+	system("clear");
+	std::cout<< "Insert Nickname: ";
+	std::cin >> nickname;
+	system("clear");
+	std::cout<< "Insert Darkest Secret: ";
+	std::cin >> darkestSecret;
+	system("clear");
 
 }
 

@@ -10,7 +10,6 @@ class	Contact
 
 		void	setQualcosa(Contact contact, int i);
 		std::string	getQualcosa(Contact contact, int i);
-		int		todo;
 
 	private:
 		std::string name;
