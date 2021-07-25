@@ -11,7 +11,7 @@ class	Contact
 	public:
 
 		void	setQualcosa(int i);
-		std::string	getQualcosa(Contact contact, std::string needed);
+		std::string	getQualcosa(std::string needed);
 
 	private:
 		std::string name;

@@ -1,65 +1,38 @@
-#include <iostream>
-#include "contact.h"
+#include "PhoneBook.h"
 
 int main ()
 {
 	system("clear");
-	Contact contact[9];
+	PhoneBook book;
 	std::string string;
-	int i = -1;
-	int c = 0;
-	int y = 0;
+	int j = -1;
 
 	std::cout << "Write \"ADD\" to add a new contact, \"SEARCH\" to search a contact, \"EXIT\" to quit\n";
 	while (1)
 	{
+		std::cout << "Command: ";
 		std::cin >> string;
-		if (string == "ADD")
+		if (!string.compare("ADD"))
 		{
-			system("clear");
-			i++;
-			if (i == 9)
-				for (i = 0; i < 8; i++)
-					contact[i] = contact[i + 1];
-			contact[i].setQualcosa(i);
-			std::cout << "What do you want to do now?\n";
+			j++;
+			book.adding(j);
 		}
-		else if (string == "SEARCH")
+		else if (!string.compare("SEARCH"))
 		{
 			std::cout << "|  index   |   name   | lastname | nickname |\n";
-			for (y = 0; y <= i; y++)
-			{
-				std::cout << "|         " << contact->getQualcosa(contact[y], "index") << "|";
-				if (contact->getQualcosa(contact[y], "name").length() >= 10)
-				{
-					for (c = 0; c < 9; c++)
-					{
-						std::cout << contact->getQualcosa(contact[y], "name")[c];
-					}
-					std::cout << ".|";
-				}
-				else
-				{
-					for (c = 0; c < (10 - contact->getQualcosa(contact[y], "name").length()); c++)
-						std::cout << " ";
-					std::cout << contact->getQualcosa(contact[y], "name") << "|";
-				}
-				std::cout << std::endl;
-			}
-
+			book.searching();
 		}
-		else if (string == "EXIT")
+		else if (!string.compare("EXIT"))
 		{
-			std::cout << "adios\n";
+			system("clear");
+			std::cout << "GOODBYE\n";
 			return (0);
 		}
 		else
 		{
-			std::cout << "noccapito\n";
+			system("clear");
+			std::cout << "only ADD, SEARCH or EXIT\n";
 		}
-
-		// string = contact->getQualcosa();
-		// std::cout << string;
 	}
 	return (0);
 }

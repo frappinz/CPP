@@ -4,7 +4,7 @@
 void	Contact::setQualcosa(int i)
 {
 	index = i;
-	std::cout<< i << ")\nInsert Name: ";
+	std::cout << "Insert Name: ";
 	std::cin >> name;
 	system("clear");
 	std::cout<< "Insert Last Name: ";
@@ -22,19 +22,21 @@ void	Contact::setQualcosa(int i)
 
 }
 
-std::string Contact::getQualcosa(Contact contact, std::string needed)
+std::string Contact::getQualcosa(std::string needed)
 {
 	std::string stringa;
 	if (needed == "name")
-		stringa = contact.name;
+		stringa = name;
 	if (needed == "lastName")
-		stringa = contact.lastName;
+		stringa = lastName;
 	if (needed == "phoneNumber")
-		stringa = contact.phoneNumber;
+		stringa = phoneNumber;
 	if (needed == "nickname")
-		stringa = contact.nickname;
+		stringa = nickname;
 	if (needed == "index")
-		stringa = std::to_string(contact.index);
+		stringa = std::to_string(index);
+	if (needed == "darkest secret")
+		stringa = darkestSecret;
 	return (stringa);
 	
 }
