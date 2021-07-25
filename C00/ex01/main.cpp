@@ -9,7 +9,6 @@ int main ()
 	int i = -1;
 	int c = 0;
 	int y = 0;
-	int length;
 
 	std::cout << "Write \"ADD\" to add a new contact, \"SEARCH\" to search a contact, \"EXIT\" to quit\n";
 	while (1)
@@ -22,27 +21,30 @@ int main ()
 			if (i == 9)
 				for (i = 0; i < 8; i++)
 					contact[i] = contact[i + 1];
-			contact[i].setQualcosa(contact[i], i);
-			std::cout << "RECAP:\nName and Lastname: " << contact->getQualcosa(contact[i], 1) << " " << contact->getQualcosa(contact[i], 2);
-			std::cout << "\nNumber: " << contact->getQualcosa(contact[i], 3) << "\nNickname : " << contact->getQualcosa(contact[i], 4) << std::endl;
+			contact[i].setQualcosa(i);
 			std::cout << "What do you want to do now?\n";
-			std::cout << "il nome alla posizione 0 é " << contact->getQualcosa(contact[0], 1) << std::endl;
 		}
 		else if (string == "SEARCH")
 		{
-			std::cout << "|  index   |   name   | lastname | nickname |\n|";
-			//std::cout << contact->getQualcosa(contact[y], 1).length();
-			if (contact->getQualcosa(contact[y], 1).length() >= 10)
+			std::cout << "|  index   |   name   | lastname | nickname |\n";
+			for (y = 0; y <= i; y++)
 			{
-				for (c = 0; c < 9; c++)
+				std::cout << "|         " << contact->getQualcosa(contact[y], "index") << "|";
+				if (contact->getQualcosa(contact[y], "name").length() >= 10)
 				{
-					std::cout << contact->getQualcosa(contact[y], 1)[c];
+					for (c = 0; c < 9; c++)
+					{
+						std::cout << contact->getQualcosa(contact[y], "name")[c];
+					}
+					std::cout << ".|";
 				}
-				std::cout << ".|";
-			}
-			else
-			{
-				std::cout << "miao";
+				else
+				{
+					for (c = 0; c < (10 - contact->getQualcosa(contact[y], "name").length()); c++)
+						std::cout << " ";
+					std::cout << contact->getQualcosa(contact[y], "name") << "|";
+				}
+				std::cout << std::endl;
 			}
 
 		}

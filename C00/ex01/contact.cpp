@@ -1,9 +1,9 @@
 #include <cstring>
 #include "contact.h"
 
-void	Contact::setQualcosa(Contact contact, int i)
+void	Contact::setQualcosa(int i)
 {
-	contact.index = i;
+	index = i;
 	std::cout<< i << ")\nInsert Name: ";
 	std::cin >> name;
 	system("clear");
@@ -22,17 +22,19 @@ void	Contact::setQualcosa(Contact contact, int i)
 
 }
 
-std::string Contact::getQualcosa(Contact contact, int i)
+std::string Contact::getQualcosa(Contact contact, std::string needed)
 {
 	std::string stringa;
-	if (i == 1)
+	if (needed == "name")
 		stringa = contact.name;
-	if (i == 2)
+	if (needed == "lastName")
 		stringa = contact.lastName;
-	if (i == 3)
+	if (needed == "phoneNumber")
 		stringa = contact.phoneNumber;
-	if (i == 4)
+	if (needed == "nickname")
 		stringa = contact.nickname;
+	if (needed == "index")
+		stringa = std::to_string(contact.index);
 	return (stringa);
 	
 }

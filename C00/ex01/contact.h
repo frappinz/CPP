@@ -3,13 +3,15 @@
 
 # include <iostream>
 # include <stdlib.h>
+# include <stdio.h>
+# include <cstring>
 
 class	Contact
 {
 	public:
 
-		void	setQualcosa(Contact contact, int i);
-		std::string	getQualcosa(Contact contact, int i);
+		void	setQualcosa(int i);
+		std::string	getQualcosa(Contact contact, std::string needed);
 
 	private:
 		std::string name;
