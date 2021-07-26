@@ -1,5 +1,5 @@
 #include <cstring>
-#include "contact.h"
+#include "Contact.hpp"
 
 void	Contact::setQualcosa(int i)
 {
@@ -22,9 +22,20 @@ void	Contact::setQualcosa(int i)
 
 }
 
+std::string itoa(int index)
+{
+	char  str[1];
+	std::string stringa;
+
+	str[0] = index + 48;
+	stringa.append(str);
+	return (stringa);
+}
+
 std::string Contact::getQualcosa(std::string needed)
 {
 	std::string stringa;
+
 	if (needed == "name")
 		stringa = name;
 	if (needed == "lastName")
@@ -34,7 +45,7 @@ std::string Contact::getQualcosa(std::string needed)
 	if (needed == "nickname")
 		stringa = nickname;
 	if (needed == "index")
-		stringa = std::to_string(index);
+		stringa = itoa(index);
 	if (needed == "darkest secret")
 		stringa = darkestSecret;
 	return (stringa);

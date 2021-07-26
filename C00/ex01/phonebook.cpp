@@ -1,4 +1,4 @@
-#include "PhoneBook.h"
+#include "PhoneBook.hpp"
 
 void	PhoneBook::adding(int j)
 {
@@ -7,7 +7,7 @@ void	PhoneBook::adding(int j)
 	if (j >= 8)
 	{
 		j = j % 8;
-		i = 7;//contact[i % 8].index = i % 8;
+		i = 7;
 	}
 	contact[j].setQualcosa(j);
 	std::cout << "What do you want to do now?\n";
@@ -30,14 +30,14 @@ void	PhoneBook::searching(void)
 	for (y = 0; y <= i; y++)
 	{
 		std::cout << "|";
-		std::cout << std::setw(10);
-		std::cout << contact[y].getQualcosa("index") << "|";
+		std::cout << "         " <<contact[y].getQualcosa("index");
+		std::cout << "|";
 		if (contact[y].getQualcosa("name").length() >= 10 ) 
 			width(contact[y].getQualcosa("name"));
 		else
 			std::cout << std::setw(10) << contact[y].getQualcosa("name");
 		std::cout << "|";
-		if (contact[y].getQualcosa("lastName").length() >= 10 ) 
+		if (contact[y].getQualcosa("lastName").length() >= 10 )
 			width(contact[y].getQualcosa("lastName"));
 		else
 			std::cout << std::setw(10) << contact[y].getQualcosa("lastName");
