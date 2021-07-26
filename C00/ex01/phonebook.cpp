@@ -4,19 +4,26 @@ void	PhoneBook::adding(int j)
 {
 	i = j;
 	system("clear");
-	if (i == 9)
-		for (i = 0; i < 8; i++)
-			contact[i] = contact[i + 1];
-	contact[i].setQualcosa(i);
+	if (j >= 8)
+	{
+		j = j % 8;
+		i = 7;//contact[i % 8].index = i % 8;
+	}
+	contact[j].setQualcosa(j);
 	std::cout << "What do you want to do now?\n";
 }
 
-void	width();
+void	width(std::string need)
+{
+	std::string str;
+
+	str.append(need, 0, 9);
+	std::cout << str << ".";
+}
 
 void	PhoneBook::searching(void)
 {
 	int y;
-	int c;
 	int index;
 	std::string input;
 
@@ -26,54 +33,20 @@ void	PhoneBook::searching(void)
 		std::cout << std::setw(10);
 		std::cout << contact[y].getQualcosa("index") << "|";
 		if (contact[y].getQualcosa("name").length() >= 10 ) 
-		{
-
-		}
-		std::cout << std::setw(10);
-		std::cout << contact[y].getQualcosa("name") << "|";
-
-		// if (contact[y].getQualcosa("name").length() >= 10)
-		// {
-		// 	for (c = 0; c < 9; c++)
-		// 	{
-		// 		std::cout << contact[y].getQualcosa("name")[c];
-		// 	}
-		// 	std::cout << ".|";
-		// }
-		// else
-		// {
-		// 	for (c = 0; c < (10 - contact[y].getQualcosa("name").length()); c++)
-		// 		std::cout << " ";
-		// 	std::cout << contact[y].getQualcosa("name") << "|";
-		// }
-		if (contact[y].getQualcosa("lastName").length() >= 10)
-		{
-			for (c = 0; c < 9; c++)
-			{
-				std::cout << contact[y].getQualcosa("lastName")[c];
-			}
-			std::cout << ".|";
-		}
+			width(contact[y].getQualcosa("name"));
 		else
-		{
-			for (c = 0; c < (10 - contact[y].getQualcosa("lastName").length()); c++)
-				std::cout << " ";
-			std::cout << contact[y].getQualcosa("lastName") << "|";
-		}
-		if (contact[y].getQualcosa("nickname").length() >= 10)
-		{
-			for (c = 0; c < 9; c++)
-			{
-				std::cout << contact[y].getQualcosa("nickname")[c];
-			}
-			std::cout << ".|";
-		}
+			std::cout << std::setw(10) << contact[y].getQualcosa("name");
+		std::cout << "|";
+		if (contact[y].getQualcosa("lastName").length() >= 10 ) 
+			width(contact[y].getQualcosa("lastName"));
 		else
-		{
-			for (c = 0; c < (10 - contact[y].getQualcosa("nickname").length()); c++)
-				std::cout << " ";
-			std::cout << contact[y].getQualcosa("nickname") << "|";
-		}
+			std::cout << std::setw(10) << contact[y].getQualcosa("lastName");
+		std::cout << "|";
+		if (contact[y].getQualcosa("nickname").length() >= 10 ) 
+			width(contact[y].getQualcosa("nickname"));
+		else
+			std::cout << std::setw(10) << contact[y].getQualcosa("nickname");
+		std::cout << "|";
 		std::cout << std::endl;
 	}
 	std::cout << "Open Contact: ";

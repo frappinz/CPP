@@ -1,4 +1,4 @@
-SRCS			= main.cpp phonebook.cpp Contact.cpp
+SRCS			= main.cpp phonebook.cpp contact.cpp
 OBJ				= $(SRCS:.cpp=.o)
 
 CC				= clang++

@@ -3,13 +3,14 @@
 
 # include <iostream> 
 # include <iomanip>
+# include <string>
 # include "contact.h"
 
 
 class PhoneBook
 {
 private:
-	Contact	contact[9];
+	Contact	contact[8];
 	int		i;
 public:
 	void	adding(int j);

@@ -4,7 +4,7 @@
 # include <iostream>
 # include <stdlib.h>
 # include <stdio.h>
-# include <cstring>
+# include <string>
 
 class	Contact
 {
