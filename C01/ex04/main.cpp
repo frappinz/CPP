@@ -9,8 +9,6 @@ bool is_empty(std::ifstream& pFile)
     return pFile.peek() == std::ifstream::traits_type::eof();
 }
 
-int isEqual()
-
 int main (int argc, char **argv)
 {
 	std::string str1;
@@ -18,7 +16,8 @@ int main (int argc, char **argv)
 	std::string filename;
 	std::ifstream filein;
 	std::ofstream fileout;
-	int i;
+	std::string tmp;
+	int i = 0;
 	char c;
 
 	if (argc < 4)
@@ -28,25 +27,36 @@ int main (int argc, char **argv)
 	}
 	str1.assign(argv[2]);
 	str2.assign(argv[3]);
+	if (str1.empty() || str2.empty())
+	{
+		std::cout << "String shouldn't be empty!" << std::endl;
+		return (0);
+	}
 	filename.assign(argv[1]);
 	filein.open(filename);
-	/*
-	if (!is_empty(filein))
-	{
-		std::cout << "File is empty or doesn't exist!\n";
-		return (0);
-	}*/
 	fileout.open(filename + ".replace");
 	while (filein.get(c))
 	{
 		if (c == str1[i])
 		{
-			
+			tmp.append(1, c);
+			while (i < str1.length() - 1)
+			{
+				filein.get(c);
+				tmp.append(1, c);
+				i++;
+			}
+			i = 0;
+			if (!str1.compare(tmp))
+			{
+				fileout << str2;
+			}
+			else
+				fileout << tmp;
+			tmp.clear();
 		}
-		std::cout << c;
-		return (0);
-		fileout << c;
+		else
+			fileout << c;
 	}
-
 
 }
