@@ -3,12 +3,6 @@
 #include <fstream>
 #include <sstream>
 
-
-bool is_empty(std::ifstream& pFile)
-{
-    return pFile.peek() == std::ifstream::traits_type::eof();
-}
-
 int main (int argc, char **argv)
 {
 	std::string str1;
@@ -34,7 +28,6 @@ int main (int argc, char **argv)
 	}
 	filename.assign(argv[1]);
 	filein.open(filename);
-	fileout.open(filename + ".replace");
 	while (filein.get(c))
 	{
 		if (c == str1[i])
@@ -48,9 +41,7 @@ int main (int argc, char **argv)
 			}
 			i = 0;
 			if (!str1.compare(tmp))
-			{
 				fileout << str2;
-			}
 			else
 				fileout << tmp;
 			tmp.clear();
@@ -58,5 +49,4 @@ int main (int argc, char **argv)
 		else
 			fileout << c;
 	}
-
 }
