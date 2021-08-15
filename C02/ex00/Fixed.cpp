@@ -8,6 +8,7 @@ oggetto originale mentre l'operatore di assegnazione è
 un operatore che aiuta ad assegnare un nuovo valore a una 
 variabile nel programma. */
 
+
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called\n";
