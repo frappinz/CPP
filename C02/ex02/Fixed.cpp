@@ -1,20 +1,5 @@
 #include "Fixed.hpp"
 
-/* La differenza principale tra il costruttore di copie 
-e l'operatore di assegnazione è quello copy constructor 
-è un tipo di costruttore che aiuta a creare una copia di 
-un oggetto già esistente senza influenzare i valori dell'
-oggetto originale mentre l'operatore di assegnazione è 
-un operatore che aiuta ad assegnare un nuovo valore a una 
-variabile nel programma. */
-
-/* Multiply the float by 2^(number of fractional bits for the type), eg. 2^8 for 24.8
-Round the result (just add 0.5) if necessary, and floor it (or cast to an integer type) leaving an integer value.
-Assign this value into the fixed-point type. */
-
-//shifting by one bit is like dividing the number by 2, shifiting to the left is like multipling it for two 
-
-
 Fixed::Fixed()
 {
 	//std::cout << "Default constructor called\n";
@@ -71,12 +56,12 @@ std::ostream& operator<<(std::ostream& out, const Fixed& f)
 
 bool Fixed::operator< (const Fixed& fix) const
 {
-	return this->fp > fix.getRawBits();
+	return this->fp < fix.getRawBits();
 }
 
 bool Fixed::operator> (const Fixed& fix) const
 { 
-	return this->fp < fix.getRawBits(); 
+	return this->fp > fix.getRawBits(); 
 }
 
 bool Fixed::operator<=(const Fixed& fix) const
@@ -130,22 +115,30 @@ Fixed	Fixed::operator --(int)
 
 Fixed Fixed:: operator+(const Fixed& fix) const
 {
-	return ((this->fp + fix.getRawBits())/(1<<8));
+	Fixed result;
+	result.setRawBits((this->fp + fix.getRawBits()));
+	return result;
 }
 
 Fixed Fixed::operator-(const Fixed& fix) const
 {
-	return (this->fp - fix.getRawBits())/(1<<8);
+	Fixed result;
+	result.setRawBits((this->fp - fix.getRawBits()));
+	return result;
 }
 
 Fixed Fixed::operator*(const Fixed& fix) const
 {
-	return ((this->fp >> 8) * (fix.getRawBits() >> 8));
+	Fixed result;
+	result.setRawBits((this->fp * fix.getRawBits()) >> this->bits);
+	return result;
 }
 
 Fixed Fixed::operator/(const Fixed& fix) const 
 {
-	return (fp / fix.getRawBits())/(1<<8);
+	Fixed result;
+	result.setRawBits((this->fp / fix.getRawBits()) >> this->bits);
+	return result;
 }
 
 Fixed & Fixed::min(Fixed &a, Fixed &b)
