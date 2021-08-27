@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/26 12:00:08 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/26 14:47:18 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 int main ()
@@ -11,7 +23,7 @@ int main ()
 	while (1)
 	{
 		std::cout << "Command: ";
-		std::cin >> string;
+		std::getline(std::cin, string);
 		if (!string.compare("ADD"))
 		{
 			j++;

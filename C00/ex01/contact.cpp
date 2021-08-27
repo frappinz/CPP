@@ -1,23 +1,35 @@
-#include <cstring>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/26 12:00:01 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/26 14:50:07 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string>
 #include "Contact.hpp"
 
-void	Contact::setQualcosa(int i)
+void	Contact::setContact(int i)
 {
 	index = i;
 	std::cout << "Insert Name: ";
-	std::cin >> name;
+	std::getline(std::cin, name);
 	system("clear");
 	std::cout<< "Insert Last Name: ";
-	std::cin >> lastName;
+	std::getline(std::cin, lastName);
 	system("clear");
 	std::cout<< "Insert Phone Number: ";
-	std::cin >> phoneNumber;
+	std::getline(std::cin, phoneNumber);
 	system("clear");
 	std::cout<< "Insert Nickname: ";
-	std::cin >> nickname;
+	std::getline(std::cin, nickname);
 	system("clear");
 	std::cout<< "Insert Darkest Secret: ";
-	std::cin >> darkestSecret;
+	std::getline(std::cin, darkestSecret);
 	system("clear");
 
 }
@@ -32,7 +44,7 @@ std::string itoa(int index)
 	return (stringa);
 }
 
-std::string Contact::getQualcosa(std::string needed)
+std::string Contact::getContact(std::string needed)
 {
 	std::string stringa;
 

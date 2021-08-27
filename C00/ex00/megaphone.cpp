@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 12:00:13 by fminardi          #+#    #+#             */
-/*   Updated: 2021/08/26 12:00:14 by fminardi         ###   ########.fr       */
+/*   Created: 2021/08/26 11:59:56 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/26 11:59:57 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#include <cctype>
+#include <iostream>
+#include <cstring>
+#include <cstdio>
 
-# include <iostream> 
-# include <iomanip>
-# include <string>
-# include "Contact.hpp"
-
-
-class PhoneBook
+int main(int argc, char **argv)
 {
-private:
-	Contact	contact[8];
-	int		i;
-public:
-	void	adding(int j);
-	void	searching();
-};
+	int y = 1;
 
-#endif
+	std::string string;
+	if (argc > 1)
+	{
+		while (argv[y])
+		{
+			string.append(argv[y]);
+			y++;
+		}
+		y = 0;
+		while (string[y])
+		{
+			string[y] = toupper(string[y]);
+			y++;
+		}
+		std::cout << string << std::endl;
+	}
+	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+}

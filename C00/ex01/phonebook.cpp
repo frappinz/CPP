@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/26 12:00:11 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/26 14:47:46 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 void	PhoneBook::adding(int j)
@@ -9,7 +21,7 @@ void	PhoneBook::adding(int j)
 		j = j % 8;
 		i = 7;
 	}
-	contact[j].setQualcosa(j);
+	contact[j].setContact(j);
 	std::cout << "What do you want to do now?\n";
 }
 
@@ -30,35 +42,35 @@ void	PhoneBook::searching(void)
 	for (y = 0; y <= i; y++)
 	{
 		std::cout << "|";
-		std::cout << "         " <<contact[y].getQualcosa("index");
+		std::cout << "         " <<contact[y].getContact("index");
 		std::cout << "|";
-		if (contact[y].getQualcosa("name").length() >= 10 ) 
-			width(contact[y].getQualcosa("name"));
+		if (contact[y].getContact("name").length() >= 10 ) 
+			width(contact[y].getContact("name"));
 		else
-			std::cout << std::setw(10) << contact[y].getQualcosa("name");
+			std::cout << std::setw(10) << contact[y].getContact("name");
 		std::cout << "|";
-		if (contact[y].getQualcosa("lastName").length() >= 10 )
-			width(contact[y].getQualcosa("lastName"));
+		if (contact[y].getContact("lastName").length() >= 10 )
+			width(contact[y].getContact("lastName"));
 		else
-			std::cout << std::setw(10) << contact[y].getQualcosa("lastName");
+			std::cout << std::setw(10) << contact[y].getContact("lastName");
 		std::cout << "|";
-		if (contact[y].getQualcosa("nickname").length() >= 10 ) 
-			width(contact[y].getQualcosa("nickname"));
+		if (contact[y].getContact("nickname").length() >= 10 ) 
+			width(contact[y].getContact("nickname"));
 		else
-			std::cout << std::setw(10) << contact[y].getQualcosa("nickname");
+			std::cout << std::setw(10) << contact[y].getContact("nickname");
 		std::cout << "|";
 		std::cout << std::endl;
 	}
 	std::cout << "Open Contact: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	index = atoi(input.c_str());
 	if (index >= 0 && index <= i && isdigit(input[0]))
 	{
-		std::cout << "NAME: "<< contact[index].getQualcosa("name") << std::endl;
-		std::cout << "LAST NAME: " << contact[index].getQualcosa("lastName") << std::endl;
-		std::cout << "PHONE NUMBER: "<< contact[index].getQualcosa("phoneNumber") << std::endl;
-		std::cout << "NICKNAME: " << contact[index].getQualcosa("nickname") << std::endl;
-		std::cout << "DARKEST SECRET: " << contact[index].getQualcosa("darkest secret") << std::endl;
+		std::cout << "NAME: "<< contact[index].getContact("name") << std::endl;
+		std::cout << "LAST NAME: " << contact[index].getContact("lastName") << std::endl;
+		std::cout << "PHONE NUMBER: "<< contact[index].getContact("phoneNumber") << std::endl;
+		std::cout << "NICKNAME: " << contact[index].getContact("nickname") << std::endl;
+		std::cout << "DARKEST SECRET: " << contact[index].getContact("darkest secret") << std::endl;
 	}
 	else
 		std::cout << "NOT FOUND!" << std::endl;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/26 12:00:04 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/26 14:17:48 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_H
 # define CONTACT_H
 
@@ -10,8 +22,8 @@ class	Contact
 {
 	public:
 
-		void	setQualcosa(int i);
-		std::string	getQualcosa(std::string needed);
+		void	setContact(int i);
+		std::string	getContact(std::string needed);
 
 	private:
 		std::string name;
