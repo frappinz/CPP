@@ -9,9 +9,8 @@ int main (int argc, char **argv)
 	std::string str2;
 	std::string filename;
 	std::ifstream filein;
-	std::ofstream fileout;
 	std::string tmp;
-	int i = 0;
+	unsigned long i = 0;
 	char c;
 
 	if (argc < 4)
@@ -28,6 +27,7 @@ int main (int argc, char **argv)
 	}
 	filename.assign(argv[1]);
 	filein.open(filename);
+	std::ofstream fileout (filename + ".replace");
 	while (filein.get(c))
 	{
 		if (c == str1[i])

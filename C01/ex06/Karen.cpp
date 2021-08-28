@@ -2,30 +2,30 @@
 
 Karen::Karen()
 {
-	levArr[0] = "Debug";
-	levArr[1] = "Info";
-	levArr[2] = "Warning";
-	levArr[3] = "Error";
+	levArr[0] = "DEBUG";
+	levArr[1] = "INFO";
+	levArr[2] = "WARNING";
+	levArr[3] = "ERROR";
 }
 
 void Karen::error(void)
 {
-	std::cout << "I'M CALLING MY COUSIN, HE'S A LAWYER" << std::endl;
+	std::cout << "[DEBUG] This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
 void Karen::warning(void)
 {
-	std::cout << "alle frasi" << std::endl;
+	std::cout <<"[INFO] I think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month." << std::endl;
 }
 
 void Karen::info(void)
 {
-	std::cout << "di pensare ora" << std::endl;
+	std::cout << "[WARNING]I cannot believe adding extra bacon cost more money. You don’t put enough! If you did I would not have to ask for it!" << std::endl;
 }
 
 void Karen::debug(void)
 {
-	std::cout << "non ho sbatti" << std::endl;
+	std::cout << "[ERROR] I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;
 }
 
 
@@ -33,10 +33,10 @@ void Karen::complain(std::string level)
 {
 	int i = 0;
 
-	arr[0] = &Karen::debug; //level "debug" index = 0;
-	arr[1] = &Karen::info; // level "info" index = 1;
-	arr[2] = &Karen::warning; //level "warning" index = 2;
-	arr[3] = &Karen::error; //level "error" index = 3;
+	arr[0] = &Karen::debug; 
+	arr[1] = &Karen::info;
+	arr[2] = &Karen::warning;
+	arr[3] = &Karen::error; 
 
 	for (i = 0; i < 4; i++)
 	{
