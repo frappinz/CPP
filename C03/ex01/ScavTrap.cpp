@@ -17,9 +17,30 @@ called the base class, and the new class is referred to as the derived class.
 
 The idea of inheritance implements the is a relationship. 
 For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well and so on. */
-#include "ScavTrap.hpp"ù
 
-ScavTrap::ScavTrap(std::string Name)
+#include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap() {}
+
+ScavTrap& ScavTrap::operator = (const ScavTrap& scav)
 {
-	this->
+	Name = scav.Name;
+	Hitpoints = scav.Hitpoints;
+	EnergyPoints = scav.EnergyPoints;
+	AttackDamage = scav.AttackDamage;
+	return *this;
+}
+ScavTrap::ScavTrap(std::string Name) : ClapTrap(name)
+{
+	
+}
+
+ScavTrap& ScavTrap::operator= (const ScavTrap &scav)
+{
+	Name = scav.Name;
+	Hitpoints = scav.Hitpoints;
+	AttackDamage = scav.AttackDamage;
+	EnergyPoints = scav.EnergyPoints;
+	//trapType = scav.trapType;
+	return *this;
 }

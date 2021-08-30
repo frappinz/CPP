@@ -11,6 +11,15 @@ ClapTrap::ClapTrap(std::string Name)
 	this->alive = 1;
 }
 
+ClapTrap ClapTrap::operator=(const ClapTrap& clap)
+{
+	Name = clap.Name;
+	Hitpoints = clap.Hitpoints;
+	EnergyPoints = clap.EnergyPoints;
+	AttackDamage = clap.AttackDamage;
+	return *this;
+}
+
 void	ClapTrap::attack(std::string const & target)
 {
 	if (!this->alive)
@@ -45,7 +54,42 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	
 }
 
-int	ClapTrap::getDamage()
+void	ClapTrap::setName(std::string name)
+{
+	this->Name = name;
+}
+
+std::string ClapTrap::getName(void)
+{
+	return this->Name;
+}
+
+void	ClapTrap::setHitPoint(int hit)
+{
+	this->Hitpoints = hit;
+}
+
+int		ClapTrap::getHitPoint()
+{
+	return this->Hitpoints;
+}
+
+void	ClapTrap::setEnergyPoints(int energy)
+{
+	this->EnergyPoints = energy;
+}
+
+int		ClapTrap::getEnergyPoints()
+{
+	return this->EnergyPoints;
+}
+
+void	ClapTrap::setAttackDamage(int att)
+{
+	this->AttackDamage = att;
+}
+
+int	ClapTrap::getAttackDamage()
 {
 	return this->AttackDamage;
 }
