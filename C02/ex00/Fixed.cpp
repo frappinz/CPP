@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 15:31:49 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/30 15:31:49 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 /* La differenza principale tra il costruttore di copie 
@@ -7,7 +19,6 @@ un oggetto già esistente senza influenzare i valori dell'
 oggetto originale mentre l'operatore di assegnazione è 
 un operatore che aiuta ad assegnare un nuovo valore a una 
 variabile nel programma. */
-
 
 Fixed::Fixed()
 {
@@ -36,7 +47,7 @@ int	Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-	fp = raw;
+	this->fp = raw;
 }
 
 Fixed::~Fixed()

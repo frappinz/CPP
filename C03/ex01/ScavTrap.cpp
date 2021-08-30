@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 15:31:28 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/30 15:31:28 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* If D publicly inherited from B, then a D could be cast to a B, 
 and this function call would be fine.
 
@@ -20,27 +32,43 @@ For example, mammal IS-A animal, dog IS-A mammal hence dog IS-A animal as well a
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() {}
-
 ScavTrap& ScavTrap::operator = (const ScavTrap& scav)
 {
-	Name = scav.Name;
-	Hitpoints = scav.Hitpoints;
-	EnergyPoints = scav.EnergyPoints;
-	AttackDamage = scav.AttackDamage;
+	this->setName(scav.getName());
+	setHitPoint(scav.getHitPoint());
+	setEnergyPoints(scav.getEnergyPoints());
+	setAttackDamage(scav.getAttackDamage());
 	return *this;
-}
-ScavTrap::ScavTrap(std::string Name) : ClapTrap(name)
-{
-	
 }
 
-ScavTrap& ScavTrap::operator= (const ScavTrap &scav)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) //costruttore
 {
-	Name = scav.Name;
-	Hitpoints = scav.Hitpoints;
-	AttackDamage = scav.AttackDamage;
-	EnergyPoints = scav.EnergyPoints;
-	//trapType = scav.trapType;
-	return *this;
+	setEnergyPoints(50);
+	setHitPoint(100);
+	setAttackDamage(20);
+	std::cout << "ScavTrap " + getName() + " has been created\n";
+}
+
+void ScavTrap::guardGate()
+{
+	if (gatekeeper == false)
+		gatekeeper = true;
+	else
+		gatekeeper = false;
+	if (gatekeeper)
+		std::cout << "Gate keeper mode: ON" << std::endl;
+	else
+		std::cout << "Gate keeper mode: OFF" << std::endl;
+
+}
+
+void	ScavTrap::attack(std::string const &target)
+{
+	this->setAttackDamage(getAttackDamage() + 2);
+	std::cout << "ScavTrap [" + this->getName() + "]" << " attack [" << target << "], causing " << this->getAttackDamage() << " points of damage!\n";
+}
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap " + getName() + " has lost the game\n";
 }

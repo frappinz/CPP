@@ -1,20 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 15:32:21 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/30 15:32:21 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
 {
+	fp = 0;
 	//std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(const int n)
 {
 	//std::cout << "Int constructor called\n";
-	this->fp = n * (1<<8);
+	this->fp = n * (1<<this->bits);
 }
 
 Fixed::Fixed(const float n)
 {
 	//std::cout << "Float constructor called\n";
-	this->fp = (roundf(n*(1<<8)));
+	this->fp = (int)(roundf(n*(1<<this->bits)));
 }
 
 Fixed::Fixed (const Fixed& fixed)
@@ -46,7 +59,7 @@ int Fixed::toInt( void ) const
 
 float Fixed::toFloat( void ) const
 {
-	return ((float)this->fp / (1 << this->bits));
+	return ((float)this->fp / (float)(1 << this->bits));
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& f)
@@ -171,7 +184,7 @@ const Fixed & Fixed::max(const Fixed &a, const Fixed &b)
 
 Fixed& Fixed::operator = (const Fixed& assign)
 {
-	//std::cout << "Assignation oerator called\n";
+	//std::cout << "Assignation operator called\n";
 	fp = assign.getRawBits();
 	return *this;
 }

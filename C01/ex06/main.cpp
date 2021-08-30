@@ -14,6 +14,7 @@
 
 int main (int ag, char *av[])
 {
+	
 	Karen karen;
 	std::string input;
 	int i = 4;

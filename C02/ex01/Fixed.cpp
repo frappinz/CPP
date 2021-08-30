@@ -1,12 +1,16 @@
-#include "Fixed.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 15:32:03 by fminardi          #+#    #+#             */
+/*   Updated: 2021/08/30 15:32:03 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/* La differenza principale tra il costruttore di copie 
-e l'operatore di assegnazione è quello copy constructor 
-è un tipo di costruttore che aiuta a creare una copia di 
-un oggetto già esistente senza influenzare i valori dell'
-oggetto originale mentre l'operatore di assegnazione è 
-un operatore che aiuta ad assegnare un nuovo valore a una 
-variabile nel programma. */
+#include "Fixed.hpp"
 
 /* Multiply the float by 2^(number of fractional bits for the type), eg. 2^8 for 24.8
 Round the result (just add 0.5) if necessary, and floor it (or cast to an integer type) leaving an integer value.
@@ -67,7 +71,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& f)
 
 Fixed& Fixed::operator = (const Fixed& assign)
 {
-	std::cout << "Assignation oerator called\n";
+	std::cout << "Assignation operator called\n";
 	fp = assign.getRawBits();
 	return *this;
 }
