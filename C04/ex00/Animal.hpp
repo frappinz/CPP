@@ -4,19 +4,17 @@
 #include <iostream>
 #include <cstring>
 
-#include "Dog.hpp"
-#include "Cat.hpp"
 class	Animal
 {
 	protected:
 		std::string type;
 	public:
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal (const Animal& animal);
 		Animal& operator= (const Animal& assign);
-		std::string getType();
-		void	makeSound();
+		std::string getType() const;
+		virtual void	makeSound() const;
 };
 
 #endif

@@ -7,6 +7,10 @@ So the same person posses different behavior in different situations.
 This is called polymorphism. Polymorphism is considered as one of the
 important features of Object Oriented Programming. */
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -20,3 +24,18 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+
+	const WrongAnimal *wa = new WrongAnimal;
+	const WrongAnimal *wc = new WrongCat;
+
+	std::cout << "WA is " << wa->getType() << std::endl;
+	std::cout << "WC is " << wc->getType() << std::endl;
+
+	std::cout << "WrongCat: ";
+	wc->makeSound();
+	delete(meta);
+	delete(i);
+	delete(j);
+	delete(wa);
+	delete(wc);
+}

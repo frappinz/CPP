@@ -1,16 +1,27 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat()
 {
 	Cat::type = "Cat";
 	std::cout << "Cat costructor called\n";
 }
 
-Cat::~Cat{
-	std::cout << "Cat destructor called\n";
+Cat &Cat::operator=(const Cat &cat) {
+	type = cat.type;
+	return *this;
 }
 
-void	Cat::makeSound()
+Cat::Cat(const Cat &cat)
 {
-	std::cout << "il gatto fa miao miao\n";
+	*this = cat;
+}
+
+Cat::~Cat (){
+	std::cout << "Cat destructor called\n";
+
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "Meow Meow\n";
 }

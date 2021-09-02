@@ -1,20 +1,33 @@
 #include "Animal.hpp"
 
-void	Animal::makeSound()
+void	Animal::makeSound() const
 {
-	std::cout << "this is wrong!\n";
+	std::cout << "I don't know what animal I am\n";
 }
 
 Animal::Animal()
 {
+	type = "Animal";
 	std::cout << "Animal costructor called\n";
 }
 
-Animal::~Animal(){
+Animal::~Animal()
+{
 	std::cout << "Animal destructor called\n";
 }
 
-std::string Animal::getType()
+Animal::Animal (const Animal& animal)
+{
+	*this = animal;
+}
+
+Animal& Animal::operator= (const Animal& assign)
+{
+	type = assign.type;
+	return *this;
+}
+
+std::string Animal::getType() const
 {
 	return this->type;
 }

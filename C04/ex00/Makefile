@@ -1,10 +1,10 @@
-SRCS			= main.cpp Cat.cpp Dog.cpp Animal.cpp
+SRCS			= main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ				= $(SRCS:.cpp=.o)
 
 CC				= clang++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -std=c++98 -g
-NAME			= fixed
+NAME			= animal
 
 %.o:			%.cpp
 				$(CC) $(CFLAGS) -c $< -o $@
