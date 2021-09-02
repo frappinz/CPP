@@ -33,5 +33,6 @@ int main()
 		mariottide.beRepaired(1);
 		i++;
 	}
-	std::cout << "\033[0;36mTHE GAME\033[0;37m finished.\n";
+	std::cout << "\033[41mTHE GAME\033[0;37m finished.\n\n";
+
 }

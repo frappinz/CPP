@@ -12,13 +12,15 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string & nick)
+ClapTrap::ClapTrap(){}
+
+ClapTrap::ClapTrap(const std::string nick)
 {
-	std::cout << "\033[0;32mClapTrap [" << nick << "] entered the game\033[0;37m\n";
+	std::cout << "\033[0;32mClapTrap [" << nick << "] \033[0;37mentered the game\n";
 	setName(nick);
-	this->Hitpoints = 10;	// ferite
-	this->EnergyPoints = 10; // vita
-	this->AttackDamage = 0;	// forza di attacco
+	this->Hitpoints = 10;
+	this->EnergyPoints = 10;
+	this->AttackDamage = 0;
 	this->alive = 1;
 }
 
@@ -36,7 +38,7 @@ void	ClapTrap::attack(std::string const & target)
 	if (!this->alive)
 		return;
 	this->AttackDamage += 2;
-	std::cout << "\033[0;32mClapTrap [" + this->Name + "]" << " attack [" << target << "], causing " << this->AttackDamage << " points of damage!\033[0;37m\n";
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "]\033[0;37m" << " attack [" << target << "], causing " << this->AttackDamage << " points of damage!\n";
 
 }
 
@@ -52,7 +54,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->AttackDamage = 0;
 		return;
 	}
-	std::cout << "\033[0;32mClapTrap [" + this->Name + "]" << " has been attacked and has " << this->EnergyPoints << " points left!\033[0;37m\n";
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "]\033[0;37m" << " has been attacked and has " << this->EnergyPoints << " points left!\n";
 
 }
 
@@ -61,7 +63,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (!this->alive)
 		return;
 	this->EnergyPoints += amount;
-	std::cout << "\033[0;32mClapTrap [" + this->Name + "]" << " has been repaired of " << amount << " point and has still " << this->EnergyPoints << " points!\033[0;37m\n";
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "]\033[0;37m" << " has been repaired of " << amount << " point and has still " << this->EnergyPoints << " points!\n";
 	
 }
 
@@ -107,5 +109,5 @@ int	ClapTrap::getAttackDamage() const
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\033[0;32mClapTrap [" + this->Name + "] lost the game.\033[0;37m\n";
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "] \033[0;37mlost the game.\n";
 }

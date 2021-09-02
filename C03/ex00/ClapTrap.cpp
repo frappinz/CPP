@@ -12,14 +12,15 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(){}
 
-ClapTrap::ClapTrap(std::string Name)
+ClapTrap::ClapTrap(const std::string nick)
 {
-	std::cout << Name << " has entered the game\n";
-	this->Name = Name;
-	this->Hitpoints = 10;	// ferite
-	this->EnergyPoints = 10; // vita
-	this->AttackDamage = 0;	// forza di attacco
+	std::cout << "\033[0;32mClapTrap [" << nick << "] \033[0;37mentered the game\n";
+	this->Name = nick;
+	this->Hitpoints = 10;
+	this->EnergyPoints = 10;
+	this->AttackDamage = 0;
 	this->alive = 1;
 }
 
@@ -28,8 +29,16 @@ void	ClapTrap::attack(std::string const & target)
 	if (!this->alive)
 		return;
 	this->AttackDamage += 2;
-	std::cout << "[" + this->Name + "]" << " attack [" << target << "], causing " << this->AttackDamage << " points of damage!\n";
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "]\033[0;37m" << " attack [" << target << "], causing " << this->AttackDamage << " points of damage!\n";
+}
 
+ClapTrap ClapTrap::operator=(const ClapTrap& clap)
+{
+	Name = clap.Name;
+	Hitpoints = clap.Hitpoints;
+	EnergyPoints = clap.EnergyPoints;
+	AttackDamage = clap.AttackDamage;
+	return *this;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -39,13 +48,12 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	this->EnergyPoints -= amount;
 	if (this->EnergyPoints <= 0)
 	{
-		std::cout << "\033[0;31m[" << this->Name << "] DIED!\033[0;37m\n";
+		std::cout << "\033[0;31mClapTrap [" << this->Name << "] DIED!\033[0;37m\n";
 		this->alive = 0;
 		this->AttackDamage = 0;
 		return;
 	}
-	std::cout << "[" + this->Name + "]" << " has been attacked and has " << this->EnergyPoints << " points left!\n";
-
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "]\033[0;37m" << " has been attacked and has " << this->EnergyPoints << " points left!\n";
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -53,8 +61,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (!this->alive)
 		return;
 	this->EnergyPoints += amount;
-	std::cout << "[" + this->Name + "]" << " has been repaired of " << amount << " point and has still " << this->EnergyPoints << " points! \n";
-	
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "]\033[0;37m" << " has been repaired of " << amount << " point and has still " << this->EnergyPoints << " points!\n";
 }
 
 int	ClapTrap::getDamage()
@@ -64,5 +71,5 @@ int	ClapTrap::getDamage()
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "[" + this->Name + "] lost the game.\n";
+	std::cout << "\033[0;32mClapTrap [" + this->Name + "] \033[0;37mlost the game.\n";
 }

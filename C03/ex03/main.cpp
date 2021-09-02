@@ -20,26 +20,30 @@ int main()
 	ClapTrap genoveffa("Genoveffa");
 	FragTrap ugo("Ugo");
 	ScavTrap mariottide("Mariottide");
-	DiamondTrap shady("What?");
+	DiamondTrap what("What");
 	int i = 0;
 
 	while (ugo.alive && genoveffa.alive && mariottide.alive)
 	{ 
 		mariottide.guardGate();
-		ugo.attack("Genoveffa");
-		genoveffa.takeDamage(ugo.getAttackDamage());
+		genoveffa.attack("Ugo");
+		ugo.takeDamage(genoveffa.getAttackDamage());
 		if(i != 0)
-			ugo.beRepaired(20);
-		genoveffa.attack("Mariottide");
-		mariottide.takeDamage(genoveffa.getAttackDamage());
-		genoveffa.beRepaired(20);
-		shady.whoAmI();
-		mariottide.attack("Ugo");
-		ugo.takeDamage(mariottide.getAttackDamage());
+			genoveffa.beRepaired(20);
+		ugo.attack("Mariottide");
+		mariottide.takeDamage(ugo.getAttackDamage());
+		ugo.beRepaired(100);
+		what.whoAmI();
+		mariottide.attack("What");
+		what.takeDamage(mariottide.getAttackDamage());
 		mariottide.beRepaired(20);
 		ugo.highFivesGuys();
 		mariottide.guardGate();
+		what.attack("Genoveffa");
+		genoveffa.takeDamage(what.getAttackDamage());
+		what.beRepaired(20);
+		what.highFivesGuys();
 		i++;
 	}
-	std::cout << "\033[0;36mTHE GAME\033[0;37m finished.\n";
+	std::cout << "\033[41mTHE GAME\033[0;37m finished.\n\n";
 }
