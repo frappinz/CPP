@@ -1,33 +1,43 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
-	Cat::type = "Cat";
-	Brain *brain = new Brain();
-	brain->ideas[0] = "prrr";
 	std::cout << "Cat costructor called\n";
+	Cat::type = "Cat";
+	brain = new Brain();
 }
 
 Cat &Cat::operator=(const Cat &cat) {
+	std::cout << "Cat assignament operator called" << std::endl;
 	type = cat.type;
-	delete (brain);
-	brain = new Brain();
 	*brain = *(cat.brain);
 	return *this;
 }
 
 Cat::Cat(const Cat &cat)
 {
+	std::cout << "copy costructor CAT called\n";
+	brain = new Brain();
 	*this = cat;
 }
 
 Cat::~Cat ()
 {
-	delete(brain);
+	delete brain;
 	std::cout << "Cat destructor called\n";
 }
 
 void	Cat::makeSound() const
 {
 	std::cout << "Meow Meow\n";
+}
+
+void	Cat::setIdea(const std::string idea)
+{
+	brain->ideas[0] = idea;
+}
+
+std::string Cat::getIdea(void) const
+{
+	return brain->ideas[0];
 }

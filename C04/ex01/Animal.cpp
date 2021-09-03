@@ -18,6 +18,7 @@ Animal::~Animal()
 
 Animal::Animal (const Animal& animal)
 {
+	std::cout << "ANIMAL COPY COSTRUCTOR\n";
 	*this = animal;
 }
 
