@@ -9,8 +9,8 @@ Cat::Cat() : Animal()
 
 Cat &Cat::operator=(const Cat &cat) {
 	std::cout << "Cat assignament operator called" << std::endl;
-	type = cat.type;
-	*brain = *(cat.brain);
+	type = cat.getType();
+	*brain = *cat.brain;
 	return *this;
 }
 
@@ -32,12 +32,12 @@ void	Cat::makeSound() const
 	std::cout << "Meow Meow\n";
 }
 
-void	Cat::setIdea(const std::string idea)
+void	Cat::setIdea(const std::string &idea)
 {
-	brain->ideas[0] = idea;
+	brain->setIdea(idea);
 }
 
 std::string Cat::getIdea(void) const
 {
-	return brain->ideas[0];
+	return (brain->getIdea());
 }

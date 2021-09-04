@@ -12,11 +12,11 @@ class	Animal
 		Animal();
 		virtual ~Animal();
 		Animal (const Animal& animal);
-		Animal& operator= (const Animal& assign);
+		void operator= (const Animal& assign);
 		std::string getType() const;
 		virtual void	makeSound() const;
 		virtual std::string		getIdea() const = 0;
-		virtual void			setIdea(const std::string idea) = 0;
+		virtual void			setIdea(const std::string &idea) = 0;
 };
 
 #endif

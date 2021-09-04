@@ -4,9 +4,8 @@
 Dog::Dog() : Animal()
 {
 	std::cout << "Dog costructor called\n";
-	Dog::type = "Dog";
+	type = "Dog";
 	brain = new Brain();
-	brain->ideas[0] = "CCC";
 }
 
 Dog::Dog(const Dog &dog) {
@@ -16,7 +15,7 @@ Dog::Dog(const Dog &dog) {
 
 Dog &Dog::operator=(const Dog &dog) {
 	std::cout << "Dog assignament operator called" << std::endl;
-	type = dog.type;
+	type = dog.getType();
 	*brain = *(dog.brain);
 	return *this;
 }
@@ -32,12 +31,12 @@ void	Dog::makeSound() const
 	std::cout << "Wof Wof\n";
 }
 
-void	Dog::setIdea(const std::string idea)
+void	Dog::setIdea(const std::string &idea)
 {
-	brain->ideas[0] = idea;
+	brain->setIdea(idea);
 }
 
 std::string Dog::getIdea(void) const
 {
-	return brain->ideas[0];
+	return (brain->getIdea());
 }

@@ -19,13 +19,12 @@ Animal::~Animal()
 Animal::Animal (const Animal& animal)
 {
 	std::cout << "ANIMAL COPY COSTRUCTOR\n";
-	*this = animal;
+	type = animal.getType();
 }
 
-Animal& Animal::operator= (const Animal& assign)
+void Animal::operator= (const Animal& assign)
 {
 	type = assign.type;
-	return *this;
 }
 
 std::string Animal::getType() const
