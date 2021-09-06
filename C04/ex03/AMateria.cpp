@@ -22,5 +22,5 @@ std::string const& AMateria::getType() const
 		
 void AMateria::use(ICharacter& target)
 {
-//forse mette il tipo di materia dentro il character?
+	
 }

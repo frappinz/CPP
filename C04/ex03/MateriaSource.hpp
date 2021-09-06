@@ -2,14 +2,15 @@
 #define MATERIASOURCE_HPP
 
 #include "IMateriaSource.hpp"
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
-		/* data */
+		AMateria *inventario[4];
 	public:
-		
-	MateriaSource();
-	~MateriaSource();
+		MateriaSource();
+		~MateriaSource();
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

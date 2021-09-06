@@ -6,11 +6,12 @@
 
 class Cure : public AMateria
 {
-private:
-	std::string type = "cure";
-public:
-	Cure(/* args */);
-	~Cure();
+	public:
+		Cure();
+		~Cure();
+		Cure* clone() const;
+		void use(ICharacter& target);
+
 };
 
 #endif
