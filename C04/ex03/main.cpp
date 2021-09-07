@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:36:09 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 17:36:10 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:46:46 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	delete tmp;
 	delete bob;
 	delete me;
 	delete src;

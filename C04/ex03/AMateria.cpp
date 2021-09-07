@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:35:46 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 17:35:47 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:31:59 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,18 @@ AMateria::AMateria(std::string const & type)
 }
 
 AMateria::~AMateria()
-{//	std::cout << "Destructor called\n";
+{
+}
+
+AMateria::AMateria(const AMateria& amateria)
+{
+	*this = amateria;
+}
+
+AMateria& AMateria::operator= (const AMateria& amateria)
+{
+	this->type = amateria.type;
+	return *this;
 }
 
 std::string const& AMateria::getType() const

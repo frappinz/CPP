@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:36:12 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 17:36:13 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:23:29 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (inventario[i] != NULL)
+			delete inventario[i];
+	}
 }
 
 MateriaSource::MateriaSource(MateriaSource& source)

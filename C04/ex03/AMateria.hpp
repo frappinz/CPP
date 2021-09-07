@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:35:48 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 17:35:49 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:32:53 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class AMateria
 	public:
 		AMateria();
 		virtual ~AMateria();
+		AMateria(const AMateria& amateria);
+		AMateria &operator=(const AMateria& amateria);
 		AMateria(std::string const & type);
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0;
