@@ -1,11 +1,15 @@
-/* The word polymorphism means having many forms. 
-In simple words, we can define polymorphism as the ability of a message to be 
-displayed in more than one form. A real-life example of polymorphism, 
-a person at the same time can have different characteristics. 
-Like a man at the same time is a father, a husband, an employee. 
-So the same person posses different behavior in different situations. 
-This is called polymorphism. Polymorphism is considered as one of the
-important features of Object Oriented Programming. */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/07 17:34:01 by fminardi          #+#    #+#             */
+/*   Updated: 2021/09/07 17:34:01 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"

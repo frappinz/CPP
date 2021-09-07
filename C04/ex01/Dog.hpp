@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/07 17:34:32 by fminardi          #+#    #+#             */
+/*   Updated: 2021/09/07 17:34:32 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DOG_HPP
 #define DOG_HPP
 
@@ -10,7 +22,7 @@ class Dog : public Animal
 		Brain* brain;
 	public:
 		Dog();
-		~Dog();
+		virtual ~Dog();
 		Dog &operator=(const Dog &dog);
 		Dog(const Dog &dog);
 		void makeSound() const;

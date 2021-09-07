@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/07 17:34:28 by fminardi          #+#    #+#             */
+/*   Updated: 2021/09/07 17:34:28 by fminardi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CAT_HPP
 #define CAT_HPP
 
@@ -10,7 +22,7 @@ class Cat : public Animal
 	public:
 		Cat();
 		Cat(const Cat &cat);
-		~Cat();
+		virtual ~Cat();
 		Cat &operator=(const Cat &cat);
 		void setIdea(const std::string &idea);
 		std::string getIdea() const;
