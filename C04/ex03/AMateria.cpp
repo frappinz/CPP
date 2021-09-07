@@ -2,7 +2,7 @@
 
 AMateria::AMateria()
 {
-	std::cout << "Costructor called\n";
+	//std::cout << "Costructor called\n";
 }
 
 AMateria::AMateria(std::string const & type)
@@ -11,8 +11,7 @@ AMateria::AMateria(std::string const & type)
 }
 
 AMateria::~AMateria()
-{
-	std::cout << "Destructor called\n";
+{//	std::cout << "Destructor called\n";
 }
 
 std::string const& AMateria::getType() const
@@ -22,5 +21,5 @@ std::string const& AMateria::getType() const
 		
 void AMateria::use(ICharacter& target)
 {
-	
+	(void)target;
 }

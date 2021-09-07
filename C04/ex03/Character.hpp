@@ -12,6 +12,8 @@ class Character : public ICharacter
 	public:
 		Character();
 		Character(std::string name);
+		Character(Character& c);
+		Character& operator= (Character & c); 
 		~Character();
 		std::string const & getName() const;
 		void equip(AMateria* m);
