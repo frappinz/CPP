@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:36:09 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:46:46 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/08 12:20:16 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 
 int main()
 {
+	Ice *banana = new Ice();
+	Cure *ciccia = new Cure();
 	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	src->learnMateria(banana);
+	src->learnMateria(ciccia);
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
@@ -30,9 +32,11 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
-	delete tmp;
+	// delete tmp;
 	delete bob;
 	delete me;
 	delete src;
+	delete banana;
+	delete ciccia;
 	return 0;
 }

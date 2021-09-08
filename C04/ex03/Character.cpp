@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:35:50 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:41:20 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/08 13:17:57 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 	{
 		if (invent[i] != NULL)
+		{
 			delete invent[i];
+		}
 	}
 	//std::cout << "Destructor called\n";
 }
@@ -66,7 +68,7 @@ void Character::equip(AMateria* m)
 	{
 		if (invent[i] == NULL)
 		{
-			invent[i] = m->clone();
+			invent[i] = m;
 			return;
 		}
 	}

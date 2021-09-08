@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:35:55 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 17:35:56 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/08 12:06:27 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Cure::~Cure()
 Cure* Cure::clone() const
 {
 	Cure *a = new Cure();
-	a->type = this->type;
 	return a;
 }
 
@@ -39,7 +38,6 @@ Cure& Cure::operator= (const Cure& cure)
 	return *this;
 
 }
-
 
 void Cure::use(ICharacter& target)
 {

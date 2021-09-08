@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:36:12 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/07 18:23:29 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/08 12:09:08 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ MateriaSource::~MateriaSource()
 	for (int i = 0; i < 4; i++)
 	{
 		if (inventario[i] != NULL)
+		{
 			delete inventario[i];
+			inventario[i] = NULL;
+		}
 	}
 }
 
@@ -39,7 +42,10 @@ MateriaSource& MateriaSource::operator= (MateriaSource& source)
 {
 	for (int i = 0; i < 4; i++) {
 		if (inventario[i])
+		{
 			delete inventario[i];
+			inventario[i] = NULL;
+		}
 		inventario[i] = source.inventario[i]->clone();
 	}
 	return *this;

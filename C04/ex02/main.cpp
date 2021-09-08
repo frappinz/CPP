@@ -14,30 +14,33 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const Animal *animalini[2];
+	const Animal *animals[4];
 	Cat copiato;
 	
-	animalini[0] = new Dog();
-	animalini[1] = new Cat();
+	for (int y = 0; y < 4; y++)
+	{
+		if (y % 2 == 0)
+			animals[y] = new Dog();
+		else
+			animals[y] = new Cat();
+	}
 	copiato.setIdea("Miaooo");
 	Cat gatto(copiato);
-	std::cout << "Dimostrazione deep copy:\n";
+	std::cout << "\nDimostrazione deep copy:\n";
 	std::cout << "Idea gatto originale: " << copiato.getIdea() << std::endl;
 	std::cout << "Idea gatto copiato: " << gatto.getIdea() << std::endl;
 
 	gatto.setIdea("MEOW\n");
-	std::cout << "Cambiando idea al gatto copiato: \n";
+	std::cout << "\nCambiando idea al gatto copiato: \n";
 	std::cout << "Idea gatto originale: " << copiato.getIdea() << std::endl;
 	std::cout << "Idea gatto copiato: " << gatto.getIdea() << std::endl;
-	delete animalini[0];
-	delete animalini[1];
+	for (int y = 0; y < 4; y++)
+		delete animals[y];
 	delete j;
 	delete i;
 }
