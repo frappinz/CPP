@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 17:15:46 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:15:47 by fminardi         ###   ########.fr       */
+/*   Created: 2021/09/09 17:15:55 by fminardi          #+#    #+#             */
+/*   Updated: 2021/09/09 17:15:56 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 	private:
@@ -42,6 +44,7 @@ class Bureaucrat
 		int getGrade();
 		void decrementGrade();
 		void incrementGrade();
+		void signForm(Form &f);
 };
 	std::ostream& operator<<(std::ostream& out, Bureaucrat& bur);
 

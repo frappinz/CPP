@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 17:15:44 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:15:45 by fminardi         ###   ########.fr       */
+/*   Created: 2021/09/09 17:15:52 by fminardi          #+#    #+#             */
+/*   Updated: 2021/09/09 17:15:53 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 Bureaucrat::Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(int grade, std::string name) : Name(name)
@@ -79,4 +78,9 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat& bur)
 {
 	return out << "< " << bur.getName() << " > bureaucrat grade < " << bur.getGrade() << " >\n";
 	//return out;
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+	f.beSigned(*this);
 }
