@@ -3,12 +3,49 @@
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137)
 {
 	this->Target = target;
-	std::cout << "sssssss\n";
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	(void) executor;
+	if (this->getSign() && executor.getGrade() <= this->getGrade_to_execute()) 
+	{
+		std::ofstream fileout(Target + "_shrubbery");
+		fileout <<
+"		                    🌞                          .\n"
+"                                   .         ;  \n"
+"      .              .              ;%     ;;   \n"
+"        ,           ,                :;%  %;   \n"
+"         :         ;                   :;%;'     .,   \n"
+",.        %;     %;            ;        %;'    ,;\n"
+"  ;       ;%;  %%;        ,     %;    ;%;    ,%'\n"
+"   %;       %;%;      ,  ;       %;  ;%;   ,%;' \n"
+"    ;%;      %;        ;%;        % ;%;  ,%;'\n"
+"     `%;.     ;%;     %;'         `;%%;.%;'\n"
+"      `:;%.    ;%%. %@;        %; ;@%;%'\n"
+"         `:%;.  :;bd%;          %;@%;'\n"
+"           `@%:.  :;%.         ;@@%;'   \n"
+"             `@%.  `;@%.      ;@@%;      \n"   
+"               `@%%. `@%%    ;@@%;        \n"
+"                 ;@%. :@%%  %@@%;       \n"
+"                   %@bd%%%bd%%:;     \n"
+"                     #@%%%%%:;;\n"
+"                     %@@%%%::;\n"
+"                     %@@@%(o);  . '         \n"
+"                     %@@@o%;:(.,'         \n"
+"                 `.. %@@@o%::;         \n"
+"                    `)@@@o%::;         \n"
+"                     %@@(o)::;        \n"
+"                    .%@@@@%::;         \n"
+"                    ;%@@@@%::;.          \n"
+"                   ;%@@@@%%:;;;. \n"
+"               ...;%@@@@@%%:;;;;,..   \n";
+		std::cout << executor.getName() << " executes " << this->getName() << std::endl;
+	}
+	else
+	{
+		std::cout << executor.getName() << " can't execute this form: ";
+		throw(Bureaucrat::GradeTooLowException());
+	}
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){}

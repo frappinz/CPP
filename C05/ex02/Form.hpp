@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:00 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/10 14:22:13 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/11 15:55:36 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-
+#include <fstream>
+#include <sstream>
 class Bureaucrat;
 class Form
 {
@@ -41,8 +42,8 @@ public:
 		public:
 			const char * what () const throw ();
 	};
-	std::string getName() ;
-	bool getSign();
+	std::string getName() const;
+	bool getSign() const;
 	int getGrade_to_sign() const;
 	int getGrade_to_execute() const;
 	void beSigned(Bureaucrat &k);

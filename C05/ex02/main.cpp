@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:03 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/10 14:22:47 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/11 16:10:00 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,15 @@ int main()
 	std::cout << pasquale << paolo << gianmarco << vincenzo;
 
 	ShrubberyCreationForm a("casa");
+	try
+	{
+		vincenzo.signForm(a);
+		a.execute(vincenzo);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 
 }

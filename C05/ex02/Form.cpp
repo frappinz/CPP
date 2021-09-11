@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:58 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:15:59 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/11 15:55:43 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ Form& Form::operator = (const Form &form)
 	return *this;
 }
 
-std::string Form::getName() {return this->Name;}
-bool Form::getSign() {return this->sign;}
+std::string Form::getName() const {return this->Name;}
+bool Form::getSign() const {return this->sign;}
 int Form::getGrade_to_sign() const {return this->grade_to_sign;}
 int Form::getGrade_to_execute() const {return this->grade_to_execute;}
 

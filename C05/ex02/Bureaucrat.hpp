@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:55 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:15:56 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/11 12:30:26 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat
 			public:
 				const char * what () const throw ();
 		};
-		int getGrade();
+		int getGrade() const;
 		void decrementGrade();
 		void incrementGrade();
 		void signForm(Form &f);

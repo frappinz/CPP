@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:52 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:15:53 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/11 12:30:42 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ const char * Bureaucrat::GradeTooHighException::what () const throw ()
 
 std::string Bureaucrat::getName() const {return this->Name;}
 
-int Bureaucrat::getGrade() {return this->Grade;}
+int Bureaucrat::getGrade() const {return this->Grade;}
 
 void Bureaucrat::decrementGrade()
 {
