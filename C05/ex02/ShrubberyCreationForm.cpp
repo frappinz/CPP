@@ -9,8 +9,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSign() && executor.getGrade() <= this->getGrade_to_execute()) 
 	{
-		std::ofstream fileout(Target + "_shrubbery");
-		fileout <<
+		//std::ofstream fileout(Target + "_shrubbery");
+		std::cout <<
 "		                    🌞                          .\n"
 "                                   .         ;  \n"
 "      .              .              ;%     ;;   \n"
@@ -39,11 +39,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "                    ;%@@@@%::;.          \n"
 "                   ;%@@@@%%:;;;. \n"
 "               ...;%@@@@@%%:;;;;,..   \n";
-		std::cout << executor.getName() << " executes " << this->getName() << std::endl;
+		//std::cout << executor.getName() << " executes " << this->getName() << std::endl;
 	}
 	else
 	{
-		std::cout << executor.getName() << " can't execute this form: ";
 		throw(Bureaucrat::GradeTooLowException());
 	}
 }

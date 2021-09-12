@@ -7,7 +7,12 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-
+	if (this->getSign() && executor.getGrade() <= this->getGrade_to_execute())
+		std::cout << "bzbzbzbzbzbzb < " << executor.getName() << " > has been robotomized successfully\n";
+	else
+	{
+		throw(Bureaucrat::GradeTooLowException());
+	}
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){}

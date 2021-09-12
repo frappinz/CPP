@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:52 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/11 12:30:42 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/12 22:30:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,27 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat& bur)
 	//return out;
 }
 
+void Bureaucrat::executeForm(const Form& f) 
+{
+	try
+	{
+		f.execute(*this);
+		std::cout << getName() << " executed " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << getName() << " cannot execute form, reason: " << e.what() << std::endl;
+	}
+}
+
 void Bureaucrat::signForm(Form &f)
 {
-	f.beSigned(*this);
+	try
+	{
+		f.beSigned(*this);
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << getName() << " cannot sign the form, reason: " << e.what() << '\n';
+	}
 }
