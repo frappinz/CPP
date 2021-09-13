@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:03 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/13 14:37:29 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/13 18:32:26 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -26,7 +27,10 @@ int main()
 
 	ShrubberyCreationForm a("casa"); //145,137
 	RobotomyRequestForm b("rrf"); //72,45
-	PresidentialPardonForm c("Cat"); //25,5
+	
+	Intern someRandomIntern;
+	Form* ppf;
+	ppf = someRandomIntern.makeForm("presidential", "Bender");
 	
 	pasquale.signForm(a);
 	std::cout << a;
@@ -37,10 +41,9 @@ int main()
 	std::cout << b;
 	paolo.signForm(b);
 	paolo.executeForm(b);
-	vincenzo.executeForm(c);
-	std::cout << c;
-	vincenzo.signForm(c);
-	vincenzo.executeForm(c);
-
+	vincenzo.executeForm(*ppf);
+	std::cout << *ppf;
+	vincenzo.signForm(*ppf);
+	vincenzo.executeForm(*ppf);
 
 }
