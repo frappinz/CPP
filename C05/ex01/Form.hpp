@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:00 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:16:01 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/14 12:42:35 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ public:
 	bool getSign();
 	int getGrade_to_sign() const;
 	int getGrade_to_execute() const;
-	void beSigned(Bureaucrat &k);
+	void beSigned(Bureaucrat &k); 
 };
 
 std::ostream& operator<<(std::ostream& out, Form& form);

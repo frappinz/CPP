@@ -1,5 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm(){}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137)
 {
 	this->Target = target;
@@ -41,7 +43,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "                    ;%@@@@%::;.          \n"
 "                   ;%@@@@%%:;;;. \n"
 "               ...;%@@@@@%%:;;;;,..   \n";
-		//std::cout << executor.getName() << " executes " << this->getName() << std::endl;
 	}
 	else
 	{
@@ -49,4 +50,14 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &sh)
+{
+	*this = sh;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreationForm &sh)
+{
+	Target = sh.Target;
+	return *this;
+}
 ShrubberyCreationForm::~ShrubberyCreationForm(){}

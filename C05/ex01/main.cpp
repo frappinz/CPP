@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:03 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/09 17:16:04 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/14 12:37:08 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int main()
 	Bureaucrat vincenzo(1, "Vincenzo");
 	std::cout << pasquale << paolo << gianmarco << vincenzo;
 
-	Form pipi("Contract", 75, 60);
+	Form a("Contract", 75, 60);
 	try
 	{
-		pasquale.signForm(pipi);
+		pasquale.signForm(a);
 	}
 	catch(std::exception &e)
 	{
@@ -40,8 +40,8 @@ int main()
 	}
 	try
 	{
-		std::cout << pipi;
-		gianmarco.signForm(pipi);
+		std::cout << a;
+		gianmarco.signForm(a);
 	}
 	catch(const std::exception& e)
 	{
@@ -50,8 +50,8 @@ int main()
 	gianmarco.incrementGrade();
 	try
 	{
-		gianmarco.signForm(pipi);
-		std::cout << pipi;
+		gianmarco.signForm(a);
+		std::cout << a;
 	}
 	catch(const std::exception& e)
 	{

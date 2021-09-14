@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:58 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/13 14:04:52 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/14 12:36:14 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ bool Form::getSign() {return this->sign;}
 int Form::getGrade_to_sign() const {return this->grade_to_sign;}
 int Form::getGrade_to_execute() const {return this->grade_to_execute;}
 
-void Form::beSigned(Bureaucrat &k) const
+void Form::beSigned(Bureaucrat &k)
 {
 	if (k.getGrade() > this->grade_to_sign)
 		throw (Bureaucrat::GradeTooLowException());

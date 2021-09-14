@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:00 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/13 14:16:58 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/14 12:39:13 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	Form();
 	Form(const Form &form);
 	Form& operator = (const Form &form);
-	~Form();
+	virtual ~Form();
 	class	GradeTooHighException : public std::exception
 	{
 		public:

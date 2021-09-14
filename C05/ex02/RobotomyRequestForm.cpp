@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+RobotomyRequestForm::RobotomyRequestForm(){}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45)
 {
@@ -13,6 +14,17 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		std::cout << "bzbzbzbzbzbzb < " << executor.getName() << " > has been robotomized successfully\n";
 	else
 		throw(Bureaucrat::GradeTooLowException());
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &sh)
+{
+	*this = sh;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator = (const RobotomyRequestForm &sh)
+{
+	Target = sh.Target;
+	return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){}

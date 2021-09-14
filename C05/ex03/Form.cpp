@@ -6,12 +6,13 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:58 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/13 15:22:10 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/14 12:45:53 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+Form::Form() :  grade_to_sign(0), grade_to_execute(0) {}
 Form::Form(std::string name, int gs, int ge) : Name(name), grade_to_sign(gs), grade_to_execute(ge)
 {
 	if (gs < 1 || ge < 1)

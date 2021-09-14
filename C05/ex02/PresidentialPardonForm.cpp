@@ -1,5 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm(){}
+
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5)
 {
 	this->Target = target;
@@ -15,6 +17,17 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	{
 		throw(Bureaucrat::GradeTooLowException());
 	}
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &sh)
+{
+	*this = sh;
+}
+
+PresidentialPardonForm& PresidentialPardonForm::operator = (const PresidentialPardonForm &sh)
+{
+	Target = sh.Target;
+	return *this;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){}
