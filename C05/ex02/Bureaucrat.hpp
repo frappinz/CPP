@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:15:55 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/12 22:14:23 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/14 13:17:08 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Bureaucrat
 		Bureaucrat& operator= (const Bureaucrat &bur);
 		~Bureaucrat();
 		std::string getName() const;
-		void setName(std::string name) const;
 		class	GradeTooHighException : public std::exception
 		{
 			public:
