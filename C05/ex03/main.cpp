@@ -6,7 +6,7 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:16:03 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/13 18:32:26 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:42:16 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 	Intern someRandomIntern;
 	Form* ppf;
 	ppf = someRandomIntern.makeForm("presidential", "Bender");
-	
+
 	pasquale.signForm(a);
 	std::cout << a;
 	pasquale.executeForm(a);
@@ -45,5 +45,5 @@ int main()
 	std::cout << *ppf;
 	vincenzo.signForm(*ppf);
 	vincenzo.executeForm(*ppf);
-
+	delete ppf;
 }
