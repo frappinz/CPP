@@ -11,4 +11,6 @@ int main (int argc, char *argv[])
 	}
 	std::string num = argv[1];
 	int integer = std::stoi(num, &sz);
+	double _double = atof(num);
+	float _float = stof
 }
