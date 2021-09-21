@@ -16,8 +16,7 @@ int main()
 {
 	Data *a = new Data;
 	uintptr_t ptr = serialize(a);
-	Data *b = new Data;
-	a = deserialize(ptr);
+	Data *b = deserialize(ptr);
 
 
 	std::cout << a << std::endl;
@@ -25,6 +24,5 @@ int main()
 	std::cout << b << std::endl;
 
 	delete a;
-	delete b;
 
 }

@@ -6,16 +6,20 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 15:02:04 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/20 13:40:52 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/20 17:32:41 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <stdio.h>
+#include <ctype.h>
+#include <cmath>
+
 
 bool is_value(float first)
 {
-	if (first != 0 && (isalpha(first) || !isdigit(first)))
+	if (first != 0 && (first < INT_MIN || first > INT_MAX || isnan(first))) //é zero anche quando passi caratteri
 		return true;
 	return false;
 }
@@ -31,7 +35,7 @@ bool is_point(std::string Num)
 	{
 		if (a[i] == '.')
 		{
-			if (a[n - 1] == '0' || (a[n - 2] == '0' && a[n - 1] == 'f'))
+			if (a[n - 1] == '0' || (a[n - 2] == '0' && a[n - 1] == 'f') || (a[i + 1] == 'f'))
 				return false;
 			return (true);
 		}
