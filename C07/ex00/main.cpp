@@ -6,12 +6,28 @@
 /*   By: fminardi <fminardi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 14:59:08 by fminardi          #+#    #+#             */
-/*   Updated: 2021/09/21 14:59:09 by fminardi         ###   ########.fr       */
+/*   Updated: 2021/09/23 10:18:53 by fminardi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 #include <iostream>
+
+
+// class Awesome
+// {
+// 	public:
+// 		Awesome (int n) : _n(n){}
+// 		bool operator ==(Awesome const &rhs) const {return (this->_n==rhs._n);}
+// 		bool operator !=(Awesome const &rhs) const {return (this->_n!=rhs._n);}
+// 		bool operator >(Awesome const &rhs) const {return (this->_n>rhs._n);}
+// 		bool operator <(Awesome const &rhs) const {return (this->_n<rhs._n);}
+// 		bool operator >=(Awesome const &rhs) const {return (this->_n>=rhs._n);}
+// 		bool operator <=(Awesome const &rhs) const {return (this->_n==rhs._n);}
+// 	private:
+// 		int _n;
+// };
+
 
 int main() 
 {
