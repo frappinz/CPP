@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <array>
+
 
 
 class Span
