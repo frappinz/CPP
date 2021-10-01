@@ -1,10 +1,10 @@
-SRCS			= main.cpp span.cpp
+SRCS			= main.cpp
 OBJ				= $(SRCS:.cpp=.o)
 
 CC				= clang++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -g -std=c++98 -g
-NAME			= span
+NAME			= mutantstack
 
 %.o:			%.cpp
 				$(CC) $(CFLAGS) -c $< -o $@
